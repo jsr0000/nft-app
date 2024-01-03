@@ -15,6 +15,7 @@ contract YourCollectible is
 {
 	using Counters for Counters.Counter;
 
+
 	Counters.Counter public tokenIdCounter;
 
 	constructor() ERC721("YourCollectible", "YCB") {}
@@ -23,7 +24,8 @@ contract YourCollectible is
 		return "https://ipfs.io/ipfs/";
 	}
 
-	function mintItem(address to, string memory uri) public returns (uint256) {
+	function mintItem(address to, string memory uri) public payable returns (uint256) {
+		
 		tokenIdCounter.increment();
 		uint256 tokenId = tokenIdCounter.current();
 		_safeMint(to, tokenId);
