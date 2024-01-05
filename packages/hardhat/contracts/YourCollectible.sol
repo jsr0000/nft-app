@@ -33,7 +33,6 @@ contract YourCollectible is
 		return tokenId;
 	}
 
-	// The following functions are overrides required by Solidity.
 
 	function _beforeTokenTransfer(
 		address from,
